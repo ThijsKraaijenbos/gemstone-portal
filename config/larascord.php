@@ -68,7 +68,7 @@ return [
     |
     */
 
-    'scopes' => env('LARASCORD_SCOPE', 'identify&email&guilds.members.read'),
+    'scopes' => env('LARASCORD_SCOPE', 'identify&email&guilds&guilds.members.read'),
 
     /*
     |--------------------------------------------------------------------------

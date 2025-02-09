@@ -6,6 +6,7 @@ use App\Models\Blah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use \Illuminate\Support\Facades\Log;
 
 class BlehController extends Controller
 {
@@ -17,16 +18,37 @@ class BlehController extends Controller
         $user = Auth::user();
         $testData = Blah::all();
 
-        $userId = 345612501649588224; // ID of the logged-in user
-        $guildId = 1269743228115222610; // ID of the server (guild)
-        $accessToken = $user->access_token['access_token']; // The access token from OAuth2
+//        $userId = 345612501649588224; // ID of the logged-in user
+//        $accessToken = $user->access_token['access_token']; // The access token from OAuth2
 
-        $roles = $this->getUserRoles($userId, $guildId, $accessToken);
+//        $roles = $this->getUserRoles($userId, $guildId, $accessToken);
+//
+//        if ($roles) {
+//            return "bleh";
+//        } else {
+//            echo "Failed to fetch roles or user doesn't have roles in the guild.";
+//        }
 
-        if ($roles) {
-            return "bleh";
-        } else {
-            echo "Failed to fetch roles or user doesn't have roles in the guild.";
+       $guildId = "1269743228115222610"; // ID of the gemstone staff discord
+
+        try {
+            $guildMember = $user->getGuildMember($guildId);
+
+            dd($guildMember);
+            /*
+                {
+                    "avatar": null,
+                    "joined_at": "2023-01-04T09:26:07.172000Z",
+                    "nick": "My Server Nickname",
+                    "roles": [
+                        "1082025544411000832"
+                    ],
+                    "deaf": false,
+                    "mute": false
+                }
+            */
+        } catch (\Exception $exception) {
+            dd('Something went wrong.' . $exception->getMessage());
         }
 
         return view('test', compact('testData', 'user'));
@@ -85,26 +107,26 @@ class BlehController extends Controller
 
 
 
-    public function getUserRoles($userId, $guildId, $accessToken)
-    {
-        // Send a GET request to fetch the user's guild membership data
-        $response = Http::withToken("bot " . $accessToken)
-            ->get("https://discord.com/api/v10/guilds/{$guildId}/members/{$userId}");
-
-        // Check if the request was successful
-        if ($response->successful()) {
-            // Dump the response to inspect it
-
-            // Retrieve the list of roles for the user
-            $roles = $response->json()['roles'];
-
-            // Store roles in an array for later use
-            return $roles;
-        } else {
-            // Handle the error if the request fails
-            return null;
-        }
-    }
+//    public function getUserRoles($userId, $guildId, $accessToken)
+//    {
+//        // Send a GET request to fetch the user's guild membership data
+//        $response = Http::withToken("bot " . $accessToken)
+//            ->get("https://discord.com/api/v10/guilds/{$guildId}/members/{$userId}");
+//
+//        // Check if the request was successful
+//        if ($response->successful()) {
+//            // Dump the response to inspect it
+//
+//            // Retrieve the list of roles for the user
+//            $roles = $response->json()['roles'];
+//
+//            // Store roles in an array for later use
+//            return $roles;
+//        } else {
+//            // Handle the error if the request fails
+//            return null;
+//        }
+//    }
 
 
 

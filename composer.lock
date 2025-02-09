@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b5e69aa35f232dbc1c99cfbc89cbf87",
+    "content-hash": "0f5c1b975115b6e93c2c606d3de4ef32",
     "packages": [
         {
             "name": "brick/math",
@@ -1060,18 +1060,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal.git",
-                "reference": "70d66b9fb3f709c8f0157e08d23019a30adad9df"
+                "reference": "fb6bfef39128ea7372aa41b9f52ba34f3fb324ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ThijsKraaijenbos/larascord-fork-gsportal/zipball/70d66b9fb3f709c8f0157e08d23019a30adad9df",
-                "reference": "70d66b9fb3f709c8f0157e08d23019a30adad9df",
+                "url": "https://api.github.com/repos/ThijsKraaijenbos/larascord-fork-gsportal/zipball/fb6bfef39128ea7372aa41b9f52ba34f3fb324ba",
+                "reference": "fb6bfef39128ea7372aa41b9f52ba34f3fb324ba",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.5",
+                "jenssegers/mongodb": "^5.1",
                 "laravel/breeze": "^v2.0",
                 "laravel/framework": "^11",
+                "mongodb/laravel-mongodb": "^5.1",
                 "php": "^8.2|^8.3"
             },
             "require-dev": {
@@ -1110,7 +1112,7 @@
                 "source": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal/tree/main",
                 "issues": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal/issues"
             },
-            "time": "2025-02-09T01:03:11+00:00"
+            "time": "2025-02-09T18:44:56+00:00"
         },
         {
             "name": "laravel/breeze",

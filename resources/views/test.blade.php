@@ -8,7 +8,7 @@
 </div>
 @endforeach
 
-<h1>ROLES TEST</h1>
+<h1>ROLES TEST - Current user = {{Auth::user()}}</h1>
 {{--@foreach($user->roles as $role)--}}
 {{--    <p>{{$role}}</p>--}}
 {{--@endforeach--}}
