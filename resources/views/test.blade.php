@@ -7,3 +7,9 @@
     <p>{{ $test->description ?? "No Description Yet" }}</p>
 </div>
 @endforeach
+
+<h1>ROLES TEST</h1>
+{{--@foreach($user->roles as $role)--}}
+{{--    <p>{{$role}}</p>--}}
+{{--@endforeach--}}
+{{--{{$user}}--}}
