@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "340571b8b91da34d4a070c5d5499ad7c",
+    "content-hash": "da3c8a82108c618afb1c9a85755a55f8",
     "packages": [
         {
             "name": "brick/math",
@@ -1053,6 +1053,125 @@
                 }
             ],
             "time": "2025-02-03T10:55:03+00:00"
+        },
+        {
+            "name": "jakyeru/larascord",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal.git",
+                "reference": "70d66b9fb3f709c8f0157e08d23019a30adad9df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ThijsKraaijenbos/larascord-fork-gsportal/zipball/70d66b9fb3f709c8f0157e08d23019a30adad9df",
+                "reference": "70d66b9fb3f709c8f0157e08d23019a30adad9df",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.5",
+                "laravel/breeze": "^v2.0",
+                "laravel/framework": "^11",
+                "php": "^8.2|^8.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^9"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Jakyeru\\Larascord\\LarascordServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jakyeru\\Larascord\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Jakyeru\\Larascord\\Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jakye",
+                    "email": "jakyeru@gmail.com"
+                }
+            ],
+            "description": "Larascord is a package that allows you to authenticate users in your Laravel application using Discord.",
+            "support": {
+                "source": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal/tree/main",
+                "issues": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal/issues"
+            },
+            "time": "2025-02-09T01:03:11+00:00"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "v2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/c40f7fce4fd80e39c7f4317697eeba21d2344003",
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^11.0",
+                "illuminate/filesystem": "^11.0",
+                "illuminate/support": "^11.0",
+                "illuminate/validation": "^11.0",
+                "php": "^8.2.0",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "laravel/framework": "^11.0",
+                "orchestra/testbench-core": "^9.0",
+                "phpstan/phpstan": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2025-01-26T19:08:50+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7133,16 +7252,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.6",
+            "version": "11.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c"
+                "reference": "e1cb706f019e2547039ca2c839898cd5f557ee5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3c3ae14c90f244cdda95028c3e469028e8d1c02c",
-                "reference": "3c3ae14c90f244cdda95028c3e469028e8d1c02c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e1cb706f019e2547039ca2c839898cd5f557ee5d",
+                "reference": "e1cb706f019e2547039ca2c839898cd5f557ee5d",
                 "shasum": ""
             },
             "require": {
@@ -7214,7 +7333,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.6"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.7"
             },
             "funding": [
                 {
@@ -7230,7 +7349,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-31T07:03:30+00:00"
+            "time": "2025-02-06T16:10:05+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -8335,7 +8454,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jakyeru/larascord": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

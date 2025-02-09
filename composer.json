@@ -10,7 +10,8 @@
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mongodb/laravel-mongodb": "^5.1",
-        "mongodb/mongodb": "^1.20"
+        "mongodb/mongodb": "^1.20",
+        "jakyeru/larascord": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -69,5 +70,12 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true
+    "prefer-stable": true,
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal.git"
+        }
+    ]
 }
