@@ -8,12 +8,13 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.9",
-        "jakyeru/larascord": "dev-main",
+        "jakyeru/larascord": "^6.0",
         "jenssegers/mongodb": "^5.1",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
         "mongodb/laravel-mongodb": "^5.1",
-        "mongodb/mongodb": "^1.20"
+        "mongodb/mongodb": "^1.20",
+        "team-reflex/discord-php": "^10.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -72,12 +73,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ThijsKraaijenbos/larascord-fork-gsportal.git"
-        }
-    ]
+    "prefer-stable": true
 }

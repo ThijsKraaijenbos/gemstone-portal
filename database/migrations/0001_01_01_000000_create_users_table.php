@@ -1,53 +1,42 @@
 <?php
 
-declare(strict_types=1);
-
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use MongoDB\Laravel\Schema\Blueprint;
 
 return new class extends Migration
 {
-    protected $connection = 'mongodb';
-
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        // Users Collection
-        Schema::create('users', function (Blueprint $collection) {
-            $collection->index('username');  // Indexing username
-            $collection->index('discriminator');  // Indexing discriminator
-            $collection->string('username');
-            $collection->string('discriminator');
-            $collection->string('email')->nullable()->unique();
-            $collection->string('avatar')->nullable();
-            $collection->boolean('verified');
-            $collection->string('locale');
-            $collection->boolean('mfa_enabled');
-            $collection->string('refresh_token')->nullable();
-            $collection->timestamps();  // MongoDB will handle this automatically
+        Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('username');
+            $table->string('discriminator');
+            $table->string('email')->nullable()->unique();
+            $table->string('avatar')->nullable();
+            $table->boolean('verified');
+            $table->string('locale');
+            $table->boolean('mfa_enabled');
+            $table->string('refresh_token')->nullable();
+            $table->timestamps();
         });
 
-        // Password Reset Tokens Collection
-        Schema::create('password_reset_tokens', function (Blueprint $collection) {
-            $collection->primary('email');
-            $collection->string('email');
-            $collection->string('token');
-            $collection->timestamp('created_at')->nullable();
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
         });
 
-        // Sessions Collection
-        Schema::create('sessions', function (Blueprint $collection) {
-            $collection->primary('id');
-            $collection->string('id');
-            $collection->index('user_id'); // Indexing user_id
-            $collection->foreignId('user_id')->nullable();
-            $collection->string('ip_address', 45)->nullable();
-            $collection->text('user_agent')->nullable();
-            $collection->longText('payload');
-            $collection->integer('last_activity')->index();
+        Schema::create('sessions', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->string('ip_address', 45)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->longText('payload');
+            $table->integer('last_activity')->index();
         });
     }
 
