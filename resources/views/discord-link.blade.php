@@ -1,1 +1,4 @@
-<h1>blehh</h1>
+@isset($message)
+    <h1 class="text-red-500">{{$message}}</h1>
+@endisset
+

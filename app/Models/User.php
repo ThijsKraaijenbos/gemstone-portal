@@ -66,6 +66,6 @@ class User extends Authenticatable
         'premium_type' => 'integer',
         'public_flags' => 'integer',
         'roles' => 'json',
-        'account_linked' => 'json',
+        'account_linked' => 'boolean',
     ];
 }
